@@ -1,7 +1,3 @@
-Got it 👍 — here’s a **summary of the `README.md`** from the **FIDO2-Key-Manager** repo:
-
----
-
 ## 📖 README Summary: FIDO2-Key-Manager
 - **Project Purpose:**  
   A graphical user interface (GUI) tool for **Fedora Linux** that helps users manage **FIDO2 security keys** (like YubiKeys or other hardware tokens).
