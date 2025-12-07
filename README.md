@@ -12,9 +12,11 @@
 - **Installation / Usage:**  
   The README suggests cloning the repository and running the Python script:
   ```bash
+  sudo dnf install xterm
   git clone https://github.com/kev2600/FIDO2-Key-Manager.git
   cd FIDO2-Key-Manager
   python3 fido2_gui.py
+
   ```
   Since it’s Fedora-focused, you may need to install dependencies via `dnf` or `pip` (e.g., `python3-fido2`, GTK or PyQt libraries depending on the GUI framework used).
 
