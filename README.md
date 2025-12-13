@@ -1,3 +1,4 @@
+```markdown
 # 📖 FIDO2‑Key‑Manager
 
 A simple graphical user interface (GUI) tool for managing **FIDO2 security keys** (such as YubiKeys, Feitian, Token2, or other hardware tokens).  
@@ -29,9 +30,9 @@ FIDO2 keys are powerful for authentication, but managing them from the command l
 
 ## 📦 Prerequisites
 
-| Distro         | Packages to Install                                                                 |
-|----------------|--------------------------------------------------------------------------------------|
-| **Fedora**     | `sudo dnf install xterm python3-fido2 python3-gobject gtk3`                          |
+| Distro           | Packages to Install                                                                 |
+|------------------|--------------------------------------------------------------------------------------|
+| **Fedora**       | `sudo dnf install xterm python3-fido2 python3-gobject gtk3`                          |
 | **Arch/CachyOS** | `sudo pacman -S xterm libfido2 python-gobject gtk3`                                 |
 
 Notes:
@@ -43,13 +44,48 @@ Notes:
 
 ## 🚀 Installation & Usage
 
+### 🔹 Arch / CachyOS
 ```bash
 # Clone the repo
 git clone https://github.com/kev2600/FIDO2-Key-Manager.git
 cd FIDO2-Key-Manager
 
-# Run the GUI
-python3 fido2_gui.py
+# Build and install using PKGBUILD
+makepkg -si
+```
+
+After installation, launch the app from your application menu or by running:
+```bash
+fido2-key-manager
+```
+
+---
+
+### 🔹 Fedora
+```bash
+# Install RPM build tools
+sudo dnf install rpm-build rpmdevtools
+
+# Set up the RPM build tree
+rpmdev-setuptree
+
+# Clone the repo
+git clone https://github.com/kev2600/FIDO2-Key-Manager.git
+cd FIDO2-Key-Manager
+
+# Copy the spec file into SPECS
+cp fido2-key-manager.spec ~/rpmbuild/SPECS/
+
+# Build the RPM (rpmbuild will fetch the source tarball automatically)
+rpmbuild -ba ~/rpmbuild/SPECS/fido2-key-manager.spec
+
+# Install the generated RPM
+sudo dnf install ~/rpmbuild/RPMS/noarch/fido2-key-manager-1.0.0-1.noarch.rpm
+```
+
+After installation, launch the app from your application menu or by running:
+```bash
+fido2-key-manager
 ```
 
 ---
@@ -64,3 +100,5 @@ python3 fido2_gui.py
 ## 📜 License
 Distributed under the **GPL‑3.0 license**.  
 Free to use, modify, and share under the same terms.
+```
+
