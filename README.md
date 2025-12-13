@@ -62,25 +62,32 @@ fido2-key-manager
 ---
 
 ### 🔹 Fedora
+
 ```bash
-# Install RPM build tools
+# Install prerequisites
+sudo dnf install xterm python3-fido2 python3-gobject gtk3
 sudo dnf install rpm-build rpmdevtools
 
 # Set up the RPM build tree
 rpmdev-setuptree
 
-# Clone the repo
+# Clone the repo (in your home directory)
 git clone https://github.com/kev2600/FIDO2-Key-Manager.git
 cd FIDO2-Key-Manager
 
 # Copy the spec file into SPECS
 cp fido2-key-manager.spec ~/rpmbuild/SPECS/
 
-# Build the RPM (rpmbuild will fetch the source tarball automatically)
+# Prepare the source tarball (exclude .git, name must match spec)
+cd ..
+cp -r FIDO2-Key-Manager fido2-key-manager-1.0.0
+tar czvf ~/rpmbuild/SOURCES/master.tar.gz --exclude='.git' fido2-key-manager-1.0.0
+
+# Build the RPM
 rpmbuild -ba ~/rpmbuild/SPECS/fido2-key-manager.spec
 
-# Install the generated RPM
-sudo dnf install ~/rpmbuild/RPMS/noarch/fido2-key-manager-1.0.0-1.noarch.rpm
+# Install the generated RPM (note the Fedora release tag, e.g. fc43)
+sudo dnf install ~/rpmbuild/RPMS/noarch/fido2-key-manager-1.0.0-1.fc$(rpm -E %fedora).noarch.rpm
 ```
 
 After installation, launch the app from your application menu or by running:
@@ -91,14 +98,15 @@ fido2-key-manager
 ---
 
 ## 🛡️ Security Notes
-- PIN changes and factory resets require interactive confirmation.  
-- Factory reset is **irreversible** — all credentials on the key will be wiped.  
+- PIN changes and factory resets require interactive confirmation in a separate `xterm` window.  
+- Factory reset is irreversible — all credentials on the key will be wiped.  
 - Always download dependencies from official repositories to avoid tampered software.  
 
 ---
 
 ## 📜 License
-Distributed under the **GPL‑3.0 license**.  
+Distributed under the GPL‑3.0 license.  
 Free to use, modify, and share under the same terms.
 ```
 
+---
