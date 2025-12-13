@@ -5,7 +5,7 @@ Summary:        GTK GUI for managing FIDO2 security keys
 
 License:        GPLv3+
 URL:            https://github.com/kev2600/FIDO2-Key-Manager
-Source0:        %{name}-%{version}.tar.gz
+Source0:        https://github.com/kev2600/FIDO2-Key-Manager/archive/refs/heads/master.tar.gz
 
 BuildArch:      noarch
 
