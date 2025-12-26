@@ -1,13 +1,13 @@
-```markdown
 # 📖 FIDO2‑Key‑Manager
 
-A simple graphical user interface (GUI) tool for managing **FIDO2 security keys** (such as YubiKeys, Feitian, Token2, or other hardware tokens).  
+A simple graphical user interface (GUI) tool for managing **FIDO2 security keys** (such as YubiKeys, Feitian, Token2, or other hardware tokens).
 
-This project was originally built for **Fedora Linux**, but it also works seamlessly on **Arch Linux** and **CachyOS** with the right dependencies installed.
+This project was originally built for **Fedora Linux**, but it also works seamlessly on **Arch Linux**, **CachyOS**, and **Ubuntu / KDE Neon** with the right dependencies installed.
 
 ---
 
 ## 🎯 Project Purpose
+
 FIDO2 keys are powerful for authentication, but managing them from the command line can be intimidating.  
 **FIDO2‑Key‑Manager** provides a lightweight GTK interface to make common tasks easier:
 
@@ -21,13 +21,13 @@ FIDO2 keys are powerful for authentication, but managing them from the command l
 ---
 
 ## ✨ Features
+
 - Clean GTK‑based GUI  
 - Tooltips and dialogs for user guidance  
 - Uses `fido2-token` under the hood (from `libfido2`)  
 - Independent terminal (`xterm`) for PIN entry and resets  
 
 ---
-
 
 ## 📦 Prerequisites
 
@@ -43,15 +43,17 @@ Run the application from the project directory:
 
 ```bash
 python3 fido2_gui.py
+```
 
 (Optional) Make the script executable:
+
+```bash
 chmod +x fido2_gui.py
 ./fido2_gui.py
-
-
+```
 
 Notes:
-- **Fedora**: `python3-fido2` provides the FIDO2 library and CLI tools. On Fedora Workstation, `python3-gobject` and `gtk3` are usually preinstalled, but they’re listed here for completeness.  
+- **Fedora**: `python3-fido2` provides the FIDO2 library and CLI tools. On Fedora Workstation, `python3-gobject` and `gtk3` are usually preinstalled.  
 - **Arch/CachyOS**: `libfido2` includes the CLI tools (`fido2-token`, `fido2-cred`). `python-gobject` and `gtk3` are required for the GTK GUI.  
 - **xterm**: Used for PIN entry and factory reset prompts in a separate terminal window.  
 
@@ -60,6 +62,7 @@ Notes:
 ## 🚀 Installation & Usage
 
 ### 🔹 Arch / CachyOS
+
 ```bash
 # Clone the repo
 git clone https://github.com/kev2600/FIDO2-Key-Manager.git
@@ -70,6 +73,7 @@ makepkg -si
 ```
 
 After installation, launch the app from your application menu or by running:
+
 ```bash
 fido2-key-manager
 ```
@@ -106,6 +110,7 @@ sudo dnf install ~/rpmbuild/RPMS/noarch/fido2-key-manager-1.0.0-1.fc$(rpm -E %fe
 ```
 
 After installation, launch the app from your application menu or by running:
+
 ```bash
 fido2-key-manager
 ```
@@ -113,6 +118,7 @@ fido2-key-manager
 ---
 
 ## 🛡️ Security Notes
+
 - PIN changes and factory resets require interactive confirmation in a separate `xterm` window.  
 - Factory reset is irreversible — all credentials on the key will be wiped.  
 - Always download dependencies from official repositories to avoid tampered software.  
@@ -120,8 +126,6 @@ fido2-key-manager
 ---
 
 ## 📜 License
+
 Distributed under the GPL‑3.0 license.  
 Free to use, modify, and share under the same terms.
-```
-
----
