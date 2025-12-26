@@ -28,19 +28,21 @@ FIDO2 keys are powerful for authentication, but managing them from the command l
 
 ---
 
+
 ## 📦 Prerequisites
 
-| Distro           | Packages to Install                                                                 |
-|------------------|--------------------------------------------------------------------------------------|
-| **Fedora**       | `sudo dnf install xterm python3-fido2 python3-gobject gtk3`                          |
-| **Arch/CachyOS** | `sudo pacman -S xterm libfido2 python-gobject gtk3`                                 |
-| **Ubuntu / KDE Neon** | 'sudo apt update
-sudo apt install xterm python3-fido2 python3-gi libgtk-3-0 fido2-tools'
+| Distro              | Packages to Install                                                                 |
+|---------------------|--------------------------------------------------------------------------------------|
+| **Fedora**          | `sudo dnf install xterm python3-fido2 python3-gobject gtk3`                          |
+| **Arch/CachyOS**    | `sudo pacman -S xterm libfido2 python-gobject gtk3`                                 |
+| **Ubuntu / KDE Neon** | `sudo apt update && sudo apt install xterm python3-fido2 python3-gi libgtk-3-0 fido2-tools` |
+
+### Ubuntu / KDE Neon Notes
 Run the application from the project directory:
+
+```bash
 python3 fido2_gui.py
-(Optional) Make the script executable:
-chmod +x fido2_gui.py
-./fido2_gui.py
+
 
 
 Notes:
