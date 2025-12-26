@@ -44,6 +44,9 @@ Run the application from the project directory:
 ```bash
 python3 fido2_gui.py
 
+(Optional) Make the script executable:
+chmod +x fido2_gui.py
+./fido2_gui.py
 
 
 
