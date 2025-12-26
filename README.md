@@ -38,10 +38,12 @@ FIDO2 keys are powerful for authentication, but managing them from the command l
 | **Ubuntu / KDE Neon** | `sudo apt update && sudo apt install xterm python3-fido2 python3-gi libgtk-3-0 fido2-tools` |
 
 ### Ubuntu / KDE Neon Notes
+
 Run the application from the project directory:
 
 ```bash
 python3 fido2_gui.py
+
 
 
 
