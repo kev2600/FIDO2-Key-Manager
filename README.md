@@ -134,3 +134,11 @@ ________________________
 Create a test resident credential using a WebAuthn demo site
 This works on every FIDO2 key:
 https://webauthn.io
+
+
+________________________
+Experimental MacOS (I don't have a Mac so let me know how it goes).
+
+brew install python3 libfido2 gtk+3 pygobject3
+python3 fido2_gui.py
+
