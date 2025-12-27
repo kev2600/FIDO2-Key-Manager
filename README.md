@@ -3,6 +3,7 @@
 A simple graphical user interface (GUI) tool for managing **FIDO2 security keys** (such as YubiKeys, Feitian, Token2, or other hardware tokens).
 
 This project was originally built for **Fedora Linux**, but it also works seamlessly on **Arch Linux**, **CachyOS**, and **Ubuntu / KDE Neon** with the right dependencies installed.
+<img width="598" height="429" alt="Screenshot_20251227_044346" src="https://github.com/user-attachments/assets/5dd84d69-84d7-4f75-860d-ed99ec7a7dc6" />
 
 ---
 
