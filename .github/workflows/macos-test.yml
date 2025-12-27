@@ -15,14 +15,15 @@ jobs:
       - name: Install Homebrew packages
         run: |
           brew update
-          brew install python3 libfido2 gtk+3 pygobject3
+          brew install python@3.12 libfido2 gtk+3 pygobject3
+          brew link --overwrite python@3.12
 
       - name: Verify Python version
-        run: python3 --version
+        run: python3.12 --version
 
       - name: Run FIDO2-Key-Manager (import test)
         run: |
-          python3 - << 'EOF'
+          python3.12 - << 'EOF'
           import gi
           gi.require_version("Gtk", "3.0")
           from gi.repository import Gtk
