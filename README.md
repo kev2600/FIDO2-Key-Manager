@@ -129,3 +129,8 @@ fido2-key-manager
 
 Distributed under the GPL‑3.0 license.  
 Free to use, modify, and share under the same terms.
+
+________________________
+Create a test resident credential using a WebAuthn demo site
+This works on every FIDO2 key:
+https://webauthn.io
