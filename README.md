@@ -137,8 +137,14 @@ https://webauthn.io
 
 
 ________________________
-Experimental MacOS (I don't have a Mac so let me know how it goes).
+macOS includes full support for FIDO2 devices through libfido2, and the Python FIDO2 library works as well.
+The GTK3 GUI should run on macOS using Homebrew, but this is experimental — I don’t have a Mac to test on, so feedback is welcome.
 
+Install dependencies (Homebrew)
 brew install python3 libfido2 gtk+3 pygobject3
+
+Run the application
 python3 fido2_gui.py
+
+If you try this on macOS, please open an Issue and let me know how it behaves — your feedback will help improve cross‑platform support.
 
