@@ -5,7 +5,11 @@ Summary:        GUI tool for managing FIDO2 security keys on Linux
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/kev2600/FIDO2-Key-Manager
+<<<<<<< HEAD
 Source0:        %{name}.tar.gz
+=======
+Source0:        fido2-key-manager.tar.gz
+>>>>>>> dbe7bb5 (Update GUI and packaging)
 
 BuildArch:      noarch
 
@@ -28,7 +32,7 @@ Features:
 - Secure PIN entry via xterm
 
 %prep
-%autosetup
+%autosetup -c
 
 %build
 # Nothing to build - pure Python
@@ -44,6 +48,7 @@ install -Dm644 fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x5
 %{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png
 
 %changelog
+<<<<<<< HEAD
 * Mon Dec 29 2025 kev2600 <your-email-if-you-want@example.com> - 1.1-1
 - Major UI improvements:
   + Modern grid layout and better spacing
@@ -55,4 +60,8 @@ install -Dm644 fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x5
   + Red destructive-action button for reset
 
 * [Previous entry if any - or this is the first]
+=======
+* Mon Dec 29 2025 kev2600 - 1.1-1
+- Major UI improvements: grid layout, auto device selection, status indicator, colored output, safer factory reset with guided prompts
+>>>>>>> dbe7bb5 (Update GUI and packaging)
 - Initial package
