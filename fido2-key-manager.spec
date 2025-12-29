@@ -1,50 +1,58 @@
 Name:           fido2-key-manager
-Version:        1.0.0
+Version:        1.1
 Release:        1%{?dist}
-Summary:        GTK GUI for managing FIDO2 security keys
+Summary:        GUI tool for managing FIDO2 security keys on Linux
 
-License:        GPLv3+
+License:        GPL-3.0-or-later
 URL:            https://github.com/kev2600/FIDO2-Key-Manager
-Source0:        https://github.com/kev2600/FIDO2-Key-Manager/archive/refs/heads/master.tar.gz
+Source0:        %{name}.tar.gz
 
 BuildArch:      noarch
 
-Requires:       python3
-Requires:       python3-fido2
 Requires:       python3-gobject
 Requires:       gtk3
+Requires:       libfido2
+Requires:       fido2-tools
 Requires:       xterm
 
 %description
-FIDO2 Key Manager is a lightweight GTK GUI for managing FIDO2 security keys
-(YubiKey, Feitian, Token2, etc). It provides a user-friendly interface for
-viewing devices, managing credentials, changing PINs, and performing resets.
+FIDO2 Key Manager is a simple GTK-based graphical tool for managing
+FIDO2 security keys (YubiKey, TrustKey, etc.) on Linux using libfido2.
+
+Features:
+- List connected devices
+- View device info
+- Change PIN
+- List resident credentials (passkeys)
+- Factory reset (with safety warnings)
+- Secure PIN entry via xterm
 
 %prep
-%setup -q
+%autosetup
 
 %build
-# Nothing to build, pure Python
+# Nothing to build - pure Python
 
 %install
-# Install the Python script
 install -Dm755 fido2_gui.py %{buildroot}%{_bindir}/fido2-key-manager
-
-# Install the desktop entry
-install -Dm644 fido2-key-manager.desktop \
-    %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop
-
-# Install the icon
-install -Dm644 fido2-key-manager.png \
-    %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/fido2-key-manager.png
+install -Dm644 fido2-key-manager.desktop %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop
+install -Dm644 fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png
 
 %files
-%license LICENSE
-%doc README.md
 %{_bindir}/fido2-key-manager
 %{_datadir}/applications/fido2-key-manager.desktop
-%{_datadir}/icons/hicolor/256x256/apps/fido2-key-manager.png
+%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png
 
 %changelog
-* Fri Dec 12 2025 Kev <you@example.com> - 1.0.0-1
-- Initial RPM release
+* Mon Dec 29 2025 kev2600 <your-email-if-you-want@example.com> - 1.1-1
+- Major UI improvements:
+  + Modern grid layout and better spacing
+  + Auto-select first detected device
+  + Status indicator ("Ready" when device selected)
+  + Colored output log (info/blue, error/red, warning/orange)
+  + Significantly safer factory reset flow with detailed warnings
+  + Guided terminal prompts for physical reset steps
+  + Red destructive-action button for reset
+
+* [Previous entry if any - or this is the first]
+- Initial package
