@@ -6,7 +6,8 @@ The tool is implemented entirely in **Python**, using **GTK** and **standard ope
 
 Originally developed for Fedora Linux, it also runs smoothly on Arch Linux, CachyOS, Ubuntu, and KDE Neon when the appropriate dependencies are installed.
 
-<img width="598" height="429" alt="Screenshot" src="https://github.com/user-attachments/assets/5dd84d69-84d7-4f75-860d-ed99ec7a7dc6" />
+<img width="683" height="547" alt="Screenshot_20251230_163045" src="https://github.com/user-attachments/assets/137a617f-0d64-47bd-947e-c22455b90bfb" />
+
 
 ---
 
