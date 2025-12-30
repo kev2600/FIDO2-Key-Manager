@@ -2,9 +2,11 @@
 
 # 📖 FIDO2‑Key‑Manager
 
-A simple graphical user interface (GUI) tool for managing **FIDO2 security keys** (YubiKey, Feitian, Token2, TrustKey, SoloKey, etc.).
+FIDO2‑Key‑Manager is a lightweight, focused GUI utility built for administrators and support scenarios. Its primary purpose is to take a FIDO2 security key in an unknown or unusable state and reset it back to a clean, working condition — without requiring access to the vendor’s full suite of advanced configuration tools.
 
-Originally built for **Fedora Linux**, but works seamlessly on **Arch Linux**, **CachyOS**, and **Ubuntu / KDE Neon** with the right dependencies installed.
+It’s intentionally streamlined: the tool is not meant to handle every intricate feature offered by each manufacturer. Instead, it provides a reliable, vendor‑agnostic way to recover or reinitialize keys from YubiKey, Feitian, Token2, TrustKey, SoloKey, and others.
+
+Originally developed for Fedora Linux, it also runs smoothly on Arch Linux, CachyOS, and Ubuntu / KDE Neon when the appropriate dependencies are installed.
 
 <img width="598" height="429" alt="Screenshot" src="https://github.com/user-attachments/assets/5dd84d69-84d7-4f75-860d-ed99ec7a7dc6" />
 
@@ -172,6 +174,3 @@ Distributed under the **GPL‑3.0** license.
 Free to use, modify, and share under the same terms.
 
 ---
-- add a **GitHub Actions release workflow**  
-
-Just tell me what direction you want next.
