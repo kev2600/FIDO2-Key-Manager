@@ -30,7 +30,7 @@ To support that mission, the tool provides:
 - 📑 **Display a complete hardware information dump** (via `fido2-token`)  
 - 🔍 **List resident keys (discoverable credentials)** stored on the authenticator  
 
-The tool can **enumerate** resident keys but does **not** provide selective management (adding, editing, or deleting individual credentials). The only action is the full factory reset, which clears everything on the device ***destructive***.
+The tool can **enumerate** resident keys but does **not** provide selective management (adding, editing, or deleting individual credentials). The only action is the full factory reset, which clears everything on the device (AKA full wipe and it's destructive and unrecoverable).
 
 In short:  
 **FIDO2‑Key‑Manager is a cross‑distro, open, vendor‑agnostic rescue utility for bringing any FIDO2 key back to a clean, usable state.**
