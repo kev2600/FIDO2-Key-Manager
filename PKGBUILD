@@ -1,5 +1,5 @@
 pkgname=fido2-key-manager
-pkgver=1.0.0
+pkgver=1.1
 pkgrel=1
 pkgdesc="GTK GUI for managing FIDO2 security keys"
 arch=('any')
@@ -21,7 +21,7 @@ package() {
   install -Dm644 fido2-key-manager.desktop \
     "$pkgdir/usr/share/applications/fido2-key-manager.desktop"
 
-  # Install the icon
+  # Install the icon (256x256 confirmed)
   install -Dm644 fido2-key-manager.png \
     "$pkgdir/usr/share/icons/hicolor/256x256/apps/fido2-key-manager.png"
 }
