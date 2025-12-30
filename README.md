@@ -164,7 +164,9 @@ The GTK3 GUI can run on macOS via Homebrew, but this remains experimental and ma
 Install dependencies
 
 ```bash
-brew install python3 libfido2 gtk+3 pygobject3 brew install xterm brew install --cask xquartz
+brew install python3 libfido2 gtk+3 pygobject3
+brew install xterm
+brew install --cask xquartz
 
 ```
 
