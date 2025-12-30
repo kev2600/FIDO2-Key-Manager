@@ -28,7 +28,7 @@ Features:
 - Secure PIN entry via xterm
 
 %prep
-%autosetup -c
+%autosetup
 
 %build
 # Nothing to build - pure Python
