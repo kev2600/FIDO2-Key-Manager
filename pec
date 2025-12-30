@@ -1,0 +1,26 @@
+[1mdiff --git a/fido2-key-manager.spec b/fido2-key-manager.spec[m
+[1mindex e6b5dd9..78c4af3 100644[m
+[1m--- a/fido2-key-manager.spec[m
+[1m+++ b/fido2-key-manager.spec[m
+[36m@@ -36,12 +36,19 @@[m [mFeatures:[m
+ %install[m
+ install -Dm755 fido2_gui.py %{buildroot}%{_bindir}/fido2-key-manager[m
+ install -Dm644 fido2-key-manager.desktop %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop[m
+[31m-install -Dm644 fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/16x16/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/16x16/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/24x24/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/24x24/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/32x32/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/32x32/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/48x48/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/48x48/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/64x64/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/64x64/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/128x128/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/128x128/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/256x256/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/fido2-key-manager.png[m
+[32m+[m[32minstall -Dm644 icons/hicolor/512x512/apps/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png[m
+ [m
+ %files[m
+ %{_bindir}/fido2-key-manager[m
+ %{_datadir}/applications/fido2-key-manager.desktop[m
+[31m-%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png[m
+[32m+[m[32m%{_datadir}/icons/hicolor/*/apps/fido2-key-manager.png[m
+ [m
+ %changelog[m
+ * Mon Dec 29 2025 Kevin <no-email-provided> - 1.1-1[m

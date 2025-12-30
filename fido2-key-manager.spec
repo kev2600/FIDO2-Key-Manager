@@ -28,22 +28,32 @@ Features:
 - Secure PIN entry via xterm
 
 %prep
-%autosetup
+%setup -q
 
 %build
-# Nothing to build - pure Python
+# Nothing to build for Python + icons
+echo "Nothing to build"
 
 %install
+# Install main script
 install -Dm755 fido2_gui.py %{buildroot}%{_bindir}/fido2-key-manager
-install -Dm644 fido2-key-manager.desktop %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop
-install -Dm644 fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png
+
+# Install desktop entry
+install -Dm644 fido2-key-manager.desktop \
+    %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop
+
+# Install icons
+for size in 16 24 32 48 64 128 256 512; do
+    install -Dm644 icons/hicolor/${size}x${size}/apps/fido2-key-manager.png \
+        %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/fido2-key-manager.png
+done
 
 %files
+%license LICENSE
 %{_bindir}/fido2-key-manager
 %{_datadir}/applications/fido2-key-manager.desktop
-%{_datadir}/icons/hicolor/512x512/apps/fido2-key-manager.png
+%{_datadir}/icons/hicolor/*/apps/fido2-key-manager.png
 
 %changelog
-* Mon Dec 29 2025 Kevin <no-email-provided> - 1.1-1
-- Major UI improvements: grid layout, auto device selection, status indicator, colored output, safer factory reset with guided prompts
-- Initial package
+* Tue Dec 30 2025 Kevin <you@example.com> - 1.1-1
+- Initial RPM release

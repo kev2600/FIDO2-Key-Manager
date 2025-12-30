@@ -2,7 +2,7 @@
 Name=FIDO2 Key Manager
 Comment=Manage FIDO2 security keys
 Exec=fido2-key-manager
-Icon=fido2-key-manager
+Icon=security-high
 Terminal=false
 Type=Application
 Categories=Utility;Security;

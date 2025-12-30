@@ -8,7 +8,7 @@ license=('GPL3')
 depends=('python-gobject' 'gtk3' 'libfido2' 'xterm')
 source=("fido2_gui.py"
         "fido2-key-manager.desktop"
-        "fido2-key-manager.png")
+        "icons/hicolor/256x256/apps/fido2-key-manager.png")
 sha256sums=('SKIP' 'SKIP' 'SKIP')
 
 package() {
@@ -21,7 +21,7 @@ package() {
   install -Dm644 fido2-key-manager.desktop \
     "$pkgdir/usr/share/applications/fido2-key-manager.desktop"
 
-  # Install the icon (256x256 confirmed)
-  install -Dm644 fido2-key-manager.png \
+  # Install the icon (256x256 canonical from icons/)
+  install -Dm644 icons/hicolor/256x256/apps/fido2-key-manager.png \
     "$pkgdir/usr/share/icons/hicolor/256x256/apps/fido2-key-manager.png"
 }
