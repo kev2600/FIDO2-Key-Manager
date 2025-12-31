@@ -1,7 +1,7 @@
 Name:           fido2-key-manager
 Version:        1.1
 Release:        1%{?dist}
-Summary:        GUI tool for managing FIDO2 security keys on Linux
+Summary:        GUI utility to manage and reset FIDO2 security keys
 
 License:        GPL-3.0-or-later
 URL:            https://github.com/kev2600/FIDO2-Key-Manager
@@ -9,51 +9,39 @@ Source0:        %{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 
-Requires:       python3-gobject
+BuildRequires:  python3-devel
+BuildRequires:  python3dist(fido2)
+BuildRequires:  python3dist(pygobject)
+BuildRequires:  gtk3
+BuildRequires:  desktop-file-utils
+
+Requires:       python3
+Requires:       python3dist(fido2)
+Requires:       python3dist(pygobject)
 Requires:       gtk3
-Requires:       libfido2
-Requires:       fido2-tools
 Requires:       xterm
 
 %description
-FIDO2 Key Manager is a simple GTK-based graphical tool for managing
-FIDO2 security keys (YubiKey, TrustKey, etc.) on Linux using libfido2.
-
-Features:
-- List connected devices
-- View device info
-- Change PIN
-- List resident credentials (passkeys)
-- Factory reset (with safety warnings)
-- Secure PIN entry via xterm
+FIDO2-Key-Manager is a lightweight GTK utility for resetting or recovering
+FIDO2 security keys from any vendor.
 
 %prep
-%setup -q
-
-%build
-# Nothing to build for Python + icons
-echo "Nothing to build"
+%autosetup
 
 %install
-# Install main script
-install -Dm755 fido2_gui.py %{buildroot}%{_bindir}/fido2-key-manager
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_datadir}/applications
+mkdir -p %{buildroot}%{_datadir}/icons/hicolor/256x256/apps
 
-# Install desktop entry
-install -Dm644 fido2-key-manager.desktop \
-    %{buildroot}%{_datadir}/applications/fido2-key-manager.desktop
-
-# Install icons
-for size in 16 24 32 48 64 128 256 512; do
-    install -Dm644 icons/hicolor/${size}x${size}/apps/fido2-key-manager.png \
-        %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/fido2-key-manager.png
-done
+install -m 0755 fido2_gui.py %{buildroot}%{_bindir}/fido2-key-manager
+install -m 0644 fido2-key-manager.desktop %{buildroot}%{_datadir}/applications/
+install -m 0644 icons/256x256/fido2-key-manager.png %{buildroot}%{_datadir}/icons/hicolor/256x256/apps/
 
 %files
 %license LICENSE
 %{_bindir}/fido2-key-manager
 %{_datadir}/applications/fido2-key-manager.desktop
-%{_datadir}/icons/hicolor/*/apps/fido2-key-manager.png
+%{_datadir}/icons/hicolor/256x256/apps/fido2-key-manager.png
 
 %changelog
-* Tue Dec 30 2025 Kevin <you@example.com> - 1.1-1
-- Initial RPM release
+Prep for package review

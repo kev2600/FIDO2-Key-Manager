@@ -1,3 +1,4 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Name=FIDO2 Key Manager
 Comment=Manage FIDO2 security keys
