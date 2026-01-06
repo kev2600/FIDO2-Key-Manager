@@ -1,3 +1,14 @@
+Project Migration Notice
+This repository is no longer maintained on GitHub.
+All ongoing development and updates have been relocated to the following location:
+
+👉 https://codeberg.org/kev2600/FIDO2-Key-Manager
+
+Please refer to the Codeberg repository for the current version of the project.
+
+
+_____________________
+
 # 📖 FIDO2‑Key‑Manager
 
 **FIDO2‑Key‑Manager** is a lightweight, open, cross‑distro GUI utility designed for administrators, support teams, and technically inclined users who need a reliable way to recover or reset FIDO2 security keys. Its purpose is simple: take a key in an unknown or unusable state and restore it to a clean, working condition — without relying on vendor‑specific software.
